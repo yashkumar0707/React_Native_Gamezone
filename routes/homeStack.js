@@ -1,34 +1,34 @@
-import { createStackNavigator } from 'react-navigation-stack'
-import { createAppContainer } from 'react-navigation'
-import Home from '../screens/home'
-import ReviewDetails from '../screens/reviewDetails'
-import Header from '../shared/header'
-import React from 'react'
-const screens = {
-    Home: {
-        screen: Home,
-        navigationOptions: ({ navigation }) => {
-            // title: 'GameZone',
-            // headerStyle: { backgroundColor: 'silver' }
-            return {
-                headerTitle: () => <Header navigation={navigation} title='GameZonee' />,
-            }
-        }
-    },
-    ReviewDetails: {
-        screen: ReviewDetails,
-        navigationOptions: {
-            title: 'Review Details',
-            // headerStyle: { backgroundColor: 'silver' }
-        }
-    },
+import { createStackNavigator } from 'react-navigation-stack';
+import React from 'react';
+import Header from '../shared/header';
+import Home from '../screens/home';
+import ReviewDetails from '../screens/reviewDetails';
 
-}
-const HomeStack = createStackNavigator(screens, {
-    defaultNavigationOptions: {
-        headerTintColor: '#444',
-        headerStyle: { backgroundColor: 'silver', height: 80 }
+const screens = {
+  Home: {
+    screen: Home,
+    navigationOptions: ({ navigation }) => {
+      return {
+        headerTitle: () => <Header title='GameZonee' navigation={navigation} />
+      }
+    },
+  },
+  ReviewDetails: {
+    screen: ReviewDetails,
+    navigationOptions: {
+      title: 'Review Details',
     }
-})
+  },
+};
+
+// home stack navigator screens
+const HomeStack = createStackNavigator(screens, {
+  defaultNavigationOptions: {
+    headerTintColor: '#444',
+    headerStyle: { backgroundColor: '#eee', height: 60 }
+  }
+});
 
 export default HomeStack;
+
+

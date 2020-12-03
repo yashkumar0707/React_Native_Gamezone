@@ -1,34 +1,24 @@
-import { createStackNavigator } from 'react-navigation-stack'
-import { createAppContainer } from 'react-navigation'
-import Home from '../screens/home'
-import About from '../screens/about'
-import Header from '../shared/header'
-import React from 'react'
-const screens = {
-    About: {
-        screen: About,
-        navigationOptions: ({ navigation }) => {
-            // title: 'GameZone',
-            // headerStyle: { backgroundColor: 'silver' }
-            return {
-                headerTitle: () => <Header navigation={navigation} title="AboutGameZonee" />,
-            }
-        }
-    }
-    // Home: {
-    //     screen: Home,
-    //     navigationOptions: {
-    //         title: 'Gamezone',
-    //         // headerStyle: { backgroundColor: 'silver' }
-    //     }
-    // },
+import { createStackNavigator } from 'react-navigation-stack';
+import React from 'react';
+import Header from '../shared/header';
+import About from '../screens/about';
 
+const screens = {
+  About: {
+    screen: About,
+    navigationOptions: ({ navigation }) => {
+      return {
+        headerTitle: () => <Header title='GameZonee' navigation={navigation} />
+      }
+    },
+  },
 }
+
 const AboutStack = createStackNavigator(screens, {
-    defaultNavigationOptions: {
-        headerTintColor: '#444',
-        headerStyle: { backgroundColor: 'silver', height: 80 }
-    }
-})
+  defaultNavigationOptions: {
+    headerTintColor: '#444',
+    headerStyle: { backgroundColor: '#eee', height: 60 },
+  }
+});
 
 export default AboutStack;
