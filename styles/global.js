@@ -14,6 +14,13 @@ export const globalStyles = StyleSheet.create({
     flex: 1,
     padding: 20,
   },
+  input: {
+    borderWidth: 1,
+    borderColor: '#ddd',
+    borderRadius: 6,
+    padding: 10,
+    fontSize: 10
+  }
 });
 
 export const images = {
